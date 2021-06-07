@@ -8,10 +8,18 @@ window.addEventListener("scroll", function () {
 const menuBtn = document.querySelector(".menu-btn");
 const navigation = document.querySelector(".navigation");
 const navigationItems = document.querySelectorAll(".navigation a");
-
-menuBtn.addEventListener("click", () => {
+const icons = document.querySelectorAll(".menu-btn i");
+console.log(icons);
+menuBtn.addEventListener("click", (i) => {
   menuBtn.classList.toggle("active");
   navigation.classList.toggle("active");
+  icons.forEach((i) => {
+    if (i.classList.contains("menu-btn-active")) {
+      i.classList.remove("menu-btn-active");
+    } else {
+      i.classList.add("menu-btn-active");
+    }
+  });
 });
 
 navigationItems.forEach((navigationItem) => {

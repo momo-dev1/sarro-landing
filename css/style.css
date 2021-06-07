@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://use.fontawesome.com/releases/5.15.2/css/all.css");
 :root {
   --orange: #fc6d45;
   --orange-shade: #f16c47;
@@ -120,6 +121,10 @@ section {
   color: #fff;
   font-size: 25px;
   margin-right: 30px;
+}
+
+.menu-btn {
+  display: none;
 }
 
 header {
@@ -285,6 +290,9 @@ body {
   box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
   border-radius: 10px;
 }
+.services .content .card:hover {
+  border: 1px solid var(--orange);
+}
 
 .services .content .card .service-icon {
   color: var(--orange);
@@ -329,6 +337,30 @@ body {
   height: 260px;
   overflow: hidden;
   border-radius: 10px;
+}
+
+.work .content .card .card-img::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f002";
+  color: var(--white);
+  position: absolute;
+  display: flex;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: var(--orange);
+  border-radius: 50%;
+  transition: 0.5s ease;
+}
+
+.work .content .card .card-img:hover.card-img::after {
+  opacity: 1;
 }
 
 .work .content .card .card-img img {
@@ -527,10 +559,10 @@ body {
   }
 
   .menu-btn {
+    display: block;
+    color: white;
     position: absolute;
-    background: url(../img/menu.png) no-repeat;
-    background-size: 30px;
-    background-position: center;
+    font-size: 30px;
     width: 40px;
     height: 40px;
     right: 0;
@@ -541,10 +573,12 @@ body {
 
   .menu-btn.active {
     z-index: 999;
-    background: url(../img/close.png) no-repeat;
-    background-size: 25px;
-    background-position: center;
+    color: black;
     transition: 0.3s ease;
+  }
+
+  .menu-btn .menu-btn-active {
+    display: none;
   }
 
   section {
@@ -626,4 +660,19 @@ body {
 .reveal.active {
   transform: translateY(0);
   opacity: 1;
+}
+
+@media (min-width: 1340px) {
+  header {
+    padding: 10px 200px;
+  }
+  header.sticky {
+    padding: 10px 200px;
+  }
+  .main .content {
+    padding: 100px;
+  }
+  .about {
+    padding: 100px 200px;
+  }
 }
